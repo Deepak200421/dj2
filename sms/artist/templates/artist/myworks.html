@@ -1,0 +1,25 @@
+{% extends 'artist/base.html' %}
+
+{% block content %}
+    <h2>View My Works Here</h2>
+  <h2> <table>
+        <tr>
+            <th>Category</th>
+            <th>Date of Creation</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Inspiration</th>
+        </tr>
+        {% for w in mw %}
+        <tr>
+            <td>{{ w.category }}</td>
+            <td>{{ w.doc }}</td>
+            <td>{{ w.price }}</td>
+            <td>{{ w.rating }}</td>
+            <td>{{ w.inspiration }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+      </h2>
+{% endblock %}
+

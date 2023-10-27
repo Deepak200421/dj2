@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Student Management System{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'artist/css/styles.css' %}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="{% url 'artist/myworks' %}">Student Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Artist
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                        <a class="dropdown-item" href="{% url 'artist/myworks' %}">My Works</a>
+
+                        <a class="dropdown-item" href="{% url 'artist/history' %}">History</a>
+                         <a class="dropdown-item" href="{% url 'artist/hanees' %}">Hanees</a>
+                        <a class="dropdown-item" href="{% url 'artist/climate' %}">Climate</a>
+
+                        <a class="dropdown-item" href="{% url 'artist_send_otp' %}">Sending otp</a>
+
+                        <a class="dropdown-item" href="{% url 'artist/list_persons' %}">list_persons</a>
+                        <a class="dropdown-item" href="{% url 'artist/index' %}">Payments</a>
+
+
+
+
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <center>
+        <img src="{% static 'artist/images/sai.jpg' %}" height="100" width="100">
+
+        <header>
+            <h1>Welcome To Student Management System</h1>
+            <h2>Hi, This is Deepak Reddy from Student Management System Office. If you have any queries, contact us: 99121xxxxx</h2>
+        </header>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </center>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

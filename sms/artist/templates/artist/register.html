@@ -1,0 +1,10 @@
+{% extends 'artist/base.html' %}
+{% block content %}
+<h3>Sign Up</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Register</button>
+    <a href="{% url 'login' %}">Already Have an Account? Sign In Here</a>
+</form>
+{% endblock %}

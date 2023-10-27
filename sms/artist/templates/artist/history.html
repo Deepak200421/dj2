@@ -1,0 +1,24 @@
+{% extends 'artist/base.html' %}
+
+{% block content %}
+    <h3>View My history Here</h3>
+<h3> <table>
+        <tr>
+            <th>Name of the coustmer</th>
+            <th>Date of purchase</th>
+            <th>Payment mode</th>
+            <th>Amount</th>
+            <th>Category</th>
+        </tr>
+        {% for w in works %}
+        <tr>
+            <td>{{ w.noc }}</td>
+            <td>{{ w.pd }}</td>
+            <td>{{ w.mop }}</td>
+            <td>{{ w.amount }}</td>
+            <td>{{ w.ac }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+      </h3>
+{% endblock %}

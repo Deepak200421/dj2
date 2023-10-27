@@ -1,0 +1,56 @@
+{% extends 'artist/base.html' %}
+
+{% block content %}
+
+<h1>View Weather</h1>
+<form method="post" class="col-md">
+    {% csrf_token %}
+    <div class="input-group">
+        <input type="text" class="form-control" name="city" placeholder="Choose Your City">
+        <div class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
+
+<div class="row" align="center">
+    {% if country_code and latitude and longitude and temp and pressure and humidity %}
+<center>
+    <table border="2">
+
+
+
+
+        <tr>
+            <td>City</td>
+            <td>{{ city }}</td>
+        </tr>
+        <tr>
+            <td>Country Code</td>
+            <td>{{ country_code }}</td>
+        </tr>
+         <tr>
+            <td>Longitude</td>
+            <td>{{ longitude }}</td>
+        </tr>
+        <tr>
+            <td>Latitude</td>
+            <td>{{ latitude }}</td>
+        </tr>
+        <tr>
+            <td>Temperature</td>
+            <td>{{ temp }}</td>
+        </tr>
+        <tr>
+            <td>Pressure</td>
+            <td>{{ pressure }}</td>
+        </tr>
+        <tr>
+            <td>Humidity</td>
+            <td>{{ humidity }}</td>
+        </tr>
+    </table>
+    {% endif %}
+    </center>
+</div>
+{% endblock %}
